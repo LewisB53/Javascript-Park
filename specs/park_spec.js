@@ -9,11 +9,18 @@ describe('Park',function(){
 
   beforeEach(function(){
    park1 = new Park();
-   dinosaur1 = new Dinosaur("t-rex", 1)
+   beast1 = new Dinosaur("t-rex", 1)
  })
 
   it("enclosure is empty", function(){
     assert.strictEqual(0,park1.numberOfBeasts())
   })
+
+  it("can add dinosaur to enclosure", function(){
+    park1.addBeast(beast1);
+    assert.strictEqual(1, park1.numberOfBeasts());
+  })
+
+
 
 })
