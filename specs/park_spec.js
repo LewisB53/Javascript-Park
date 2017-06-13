@@ -5,11 +5,17 @@ var Dinosaur = require('../dinosaur.js');
 describe('Park',function(){
 
   var park1;
-  var dinosaur1;
+  var beast1;
+  var beast2;
+  var beast3;
 
   beforeEach(function(){
    park1 = new Park();
    beast1 = new Dinosaur("t-rex", 1)
+   beast2 = new Dinosaur("stegasaurus", 1)
+   beast3 = new Dinosaur("stegasaurus", 1)
+
+
  })
 
   it("enclosure is empty", function(){
@@ -20,6 +26,16 @@ describe('Park',function(){
     park1.addBeast(beast1);
     assert.strictEqual(1, park1.numberOfBeasts());
   })
+
+  it("can remove specific type of dinosaur" , function(){
+    park1.addBeast(beast1);
+    park1.addBeast(beast2);
+    park1.addBeast(beast2);
+    park1.removeTypeOfBeast(beast2.type);
+    assert.strictEqual(1,park1.numberOfBeasts())
+  })
+
+
 
 
 

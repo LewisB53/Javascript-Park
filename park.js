@@ -7,7 +7,18 @@ Park.prototype = {
   },
 
   addBeast: function(beast) {
-    return this.beasts.push(beast);
+    return this.beasts.push(beast)
+  },
+
+  removeTypeOfBeast: function(type) {
+    var i = 0;
+    for (var beast of this.beasts)
+      i++;
+      if (beast.type === type){
+        var index = this.beasts.indexOf(beast);
+        this.beasts.splice(index, i);
+      }
+ 
   }
 
 }
