@@ -13,7 +13,7 @@ describe('Park',function(){
    park1 = new Park();
    beast1 = new Dinosaur("t-rex", 1)
    beast2 = new Dinosaur("stegasaurus", 1)
-   beast3 = new Dinosaur("stegasaurus", 1)
+   beast3 = new Dinosaur("stegasaurus", 3)
 
 
  })
@@ -35,7 +35,16 @@ describe('Park',function(){
     assert.strictEqual(1,park1.numberOfBeasts())
   })
 
+  it("can get dinosaurs with 2 offspring" , function(){
+    park1.addBeast(beast1);
+    park1.addBeast(beast3);
+    park1.addBeast(beast3);
+   
+    park1.getBreederBeasts(beast1.numberOfOffspring);
+    assert.strictEqual(2,park1.breeders.length);
 
+
+  })
 
 
 
